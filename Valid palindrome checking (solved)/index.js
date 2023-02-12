@@ -26,6 +26,7 @@ function checkPalindrome(input) {
     // with a "replacement" (second parameter).
     // In the above code, replace() switches any character
     // that is not alphanumeric with and empty string (using the RegEx).
+    // The "NOT" (NOT alphanumeric) is specified by the caret symbol (^).
     // The "g" flag ensures that replace() does not terminate
     // after the first instance of a non-alphanumeric character.
 
