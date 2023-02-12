@@ -1,0 +1,10 @@
+CHALLENGE:
+
+You are given a signal as a string of zeros
+and ones. Return the length of the longest
+sequence of ones.
+
+EXAMPLE:
+
+Input = "0110111001011110000000011"
+Output = 4

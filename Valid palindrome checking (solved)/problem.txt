@@ -1,0 +1,12 @@
+PROBLEM
+
+Define a valid palindrome checking function.
+The function only considers alphanumeric characters, no special characters or spaces.
+
+EXAMPLES
+
+pal = "Satan, oscillate my metallic sonatas";
+notPal = "Ok I pull up";
+
+console.log(checkPalindrome(pal));      // prints "true"
+console.log(checkPalindrome(notPal));   // prints "false"
