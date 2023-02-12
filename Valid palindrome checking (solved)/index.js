@@ -36,9 +36,8 @@ function checkPalindrome(input) {
     // reversing the input string into an array
     let reverse = [];
     // Here, reverse must be explicitly declared as an array
-    // because we cannot set properties or access properties
-    // of "undefined" values
-    // simply using "let reverse;" throws a TypeError.
+    // because we cannot set properties or access properties of "undefined" values.
+    // Simply using "let reverse;" throws a TypeError.
     for (let i = 0, j = (input.length - 1); i < input.length && j >= 0; i++, j--) {
         reverse[j] = input[i];
     }
