@@ -5,7 +5,7 @@
 // Output - "fl"
 
 function longestCommonPrefix(array) {
-    let prefix;
+    let prefix = "";
     console.log(array[1][0]);   // prints the "l" in "florida"
     // for (let i = 0; i < 20; i++) {
     //     if (array[i][i] === array[i+1][i]) {
@@ -27,7 +27,8 @@ function longestCommonPrefix(array) {
     for (let i = 0; i < array.length; i++) {
         for (let j = 0; j < maxLength; j++) {
             if (array[i][j] === array[i+1][j]) {
-                prefix = prefix + array[i][i];
+                prefix = prefix + array[i][j];
+                console.log(prefix);
             } else break;
         }
     }
