@@ -6,7 +6,7 @@
 
 function longestCommonPrefix(array) {
     let prefix = "";
-    console.log(array[1][0]);   // prints the "l" in "florida"
+    console.log(array[1][0]);   // prints the "f" in "florida"
     // for (let i = 0; i < 20; i++) {
     //     if (array[i][i] === array[i+1][i]) {
     //         prefix = prefix + array[i][i];
@@ -23,16 +23,20 @@ function longestCommonPrefix(array) {
     }
     console.log(maxLength);
 
-    // checking prefix
+    // checking prefix between 2 words at a time
+    let temp;
     for (let i = 0; i < array.length; i++) {
+        prefix = "";
         for (let j = 0; j < maxLength; j++) {
             if (array[i][j] === array[i+1][j]) {
                 prefix = prefix + array[i][j];
                 console.log(prefix);
             } else break;
         }
+        temp = prefix;
+        console.log(`Prefix after break is ${temp}`);
     }
     console.log(prefix);
 }
 
-longestCommonPrefix(["flower", "florida", "flax"]);
+longestCommonPrefix(["flower", "florida", "flax"]);     // output = "fl"
