@@ -8,6 +8,7 @@ function longestCommonPrefix(array) {
     let prefix = "";
     console.log(array.length);
     console.log(array[1][0]);   // prints the "f" in "florida"
+
     // for (let i = 0; i < 20; i++) {
     //     if (array[i][i] === array[i+1][i]) {
     //         prefix = prefix + array[i][i];
