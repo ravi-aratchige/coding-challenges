@@ -10,6 +10,9 @@ function longestCommonPrefix(array) {
     for (let i = 0; i < array.length; i++) {
         if (prefix === "") {
             prefix = checkCommonCharacters(array[0], array[1]);
+            if (prefix === "") {
+                break;
+            }
         } else prefix = checkCommonCharacters(prefix, array[i]);
     }
     
