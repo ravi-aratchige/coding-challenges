@@ -25,6 +25,9 @@ function longestCommonPrefix(array) {
     }
     console.log(maxLength);
 
+    // NOTE
+    // 'j' should not traverse maxLength, but minLength. Fix this.
+
     // checking prefix between 2 words at a time
     let temp;
     for (let i = 0; i < (array.length - 1); i++) {
