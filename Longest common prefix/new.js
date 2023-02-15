@@ -19,20 +19,34 @@ function longestCommonPrefix(array) {
     console.log(maxLength);
 
     // checking prefix between 2 words at a time
-    for (let i = 0; i < (array.length - 1); i++) {
-        for (let j = 0; j < maxLength; j++) {
-            if (array[i][j] === array[i+1][j]) {
-                prefix = prefix + array[i][j];
-            }
-        }
-        if (prefix === "") {
+    // for (let i = 0; i < (array.length - 1); i++) {
+    //     for (let j = 0; j < maxLength; j++) {
+    //         if (array[i][j] === array[i+1][j]) {
+    //             prefix = prefix + array[i][j];
+    //         }
+    //     }
+    //     if (prefix === "") {
                 
-        } else {
-            // 
-        }
+    //     } else {
+    //         // 
+    //     }
+    // }
+
+    // getting prefix of first 2 words
+    // prefix = checkCommonCharacters[array[0], array[1]];
+
+    console.log(array[0], array[1]);
+    console.log(typeof(array[0]));
+
+    for (let i = 0; i < array.length; i++) {
+        if (prefix === "") {
+            prefix = checkCommonCharacters(array[0], array[1]);
+        } else prefix = checkCommonCharacters(prefix, array[i]);
     }
     
-    console.log(prefix);
+    if (prefix === "") {
+        console.log("No common prefixes.");
+    } else console.log(prefix);
 }
 
 // checking common characters between 2 words at a time
@@ -42,9 +56,14 @@ function checkCommonCharacters(word1, word2) {
 
     if (word1.length < word2.length) {
         minimumLength = word1.length;
+        console.log(`Shorter word is ${word1}.`);
     } else if (word1.length > word2.length) {
         minimumLength = word2.length;
-    } else minimumLength - word1.length;
+        console.log(`Shorter word is ${word2}.`);
+    } else {
+        minimumLength - word1.length;
+        console.log("Both words are similar in length.");
+    }
 
     console.log(minimumLength);
 
@@ -58,10 +77,11 @@ function checkCommonCharacters(word1, word2) {
     }
 
     console.log(prefix);
+    return prefix;
 }
 
-// longestCommonPrefix(["flower", "florida", "flax"]);     // output = "fl"
-checkCommonCharacters("flower", "florida");
+longestCommonPrefix(["sasanka", "flower", "florida", "flax", "four"]);     // output = "fl"
+// checkCommonCharacters("flower", "florida");
 
 // NOTE
 // checkCommonCharacters() gives undefined output when both arguments are the same word. Find out why this happens.
