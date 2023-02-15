@@ -6,37 +6,6 @@
 
 function longestCommonPrefix(array) {
     let prefix = "";
-    console.log(array.length);
-    console.log(array[1][0]);   // prints the "f" in "florida"
-
-    // finding word having the longest length
-    let maxLength = 0;
-    for (let i = 0; i < array.length; i++) {
-        if (array[i].length > maxLength) {
-            maxLength = array[i].length;
-        }
-    }
-    console.log(maxLength);
-
-    // checking prefix between 2 words at a time
-    // for (let i = 0; i < (array.length - 1); i++) {
-    //     for (let j = 0; j < maxLength; j++) {
-    //         if (array[i][j] === array[i+1][j]) {
-    //             prefix = prefix + array[i][j];
-    //         }
-    //     }
-    //     if (prefix === "") {
-                
-    //     } else {
-    //         // 
-    //     }
-    // }
-
-    // getting prefix of first 2 words
-    // prefix = checkCommonCharacters[array[0], array[1]];
-
-    console.log(array[0], array[1]);
-    console.log(typeof(array[0]));
 
     for (let i = 0; i < array.length; i++) {
         if (prefix === "") {
@@ -65,9 +34,7 @@ function checkCommonCharacters(word1, word2) {
         console.log("Both words are similar in length.");
     }
 
-    console.log(minimumLength);
-
-    // check common characters between 2 words
+    // check common characters between 2 words and set to prefix
     let prefix = "";
 
     for (let i = 0; i < minimumLength; i++) {
@@ -76,7 +43,6 @@ function checkCommonCharacters(word1, word2) {
         } else break;
     }
 
-    console.log(prefix);
     return prefix;
 }
 
