@@ -1,9 +1,3 @@
-// CHALLENGE:
-// Return a string containing the longest common prefix from a list of strings.
-// EXAMPLE:
-// Input - ["flower", "florida", "flax"]
-// Output - "fl"
-
 function longestCommonPrefix(array) {
     // initiate the 'prefix' variable using the first 2 words of the list
     let prefix = checkCommonCharacters(array[0], array[1]);
