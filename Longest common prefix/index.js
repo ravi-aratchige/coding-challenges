@@ -11,6 +11,7 @@ function longestCommonPrefix(array) {
     for (let i = 0; i < array.length; i++) {
         if (prefix === "") {
             prefix = checkCommonCharacters(array[0], array[1]);
+            // console.log(prefix);
             if (prefix === "") break;
         } else prefix = checkCommonCharacters(prefix, array[i]);
     }
@@ -41,6 +42,7 @@ function checkCommonCharacters(word1, word2) {
 }
 
 console.log(longestCommonPrefix(["flower", "florida", "flax"]));                // output = "fl"
+console.log(longestCommonPrefix(["four", "flower", "florida", "flax"]));        // output = "f"
 console.log(longestCommonPrefix(["flower", "flower"]));                         // output = "flower"
 console.log(longestCommonPrefix(["ravindu", "flower", "florida", "flax"]));     // output = "No common prefixes"
 
