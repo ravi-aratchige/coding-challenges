@@ -28,8 +28,5 @@ function twoSum(nums: number[], target: number): void {
     console.log(`${index1}, ${index2}`);
 }
 
-// NOTE
-// code only outputs elements, not indices.
-
 twoSum([2, 7, 11, 15], 9);      // expected output = [0,1];
 twoSum([3,2,4], 6);             // expected output = [1,2];
