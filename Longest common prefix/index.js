@@ -6,43 +6,50 @@
 
 function longestCommonPrefix(array) {
     let prefix = "";
-    console.log(array.length);
-    console.log(array[1][0]);   // prints the "f" in "florida"
 
-    // for (let i = 0; i < 20; i++) {
-    //     if (array[i][i] === array[i+1][i]) {
-    //         prefix = prefix + array[i][i];
-    //         console.log(prefix);
-    //     }
-    // }
-
-    // finding word having the longest length
-    let maxLength = 0;
     for (let i = 0; i < array.length; i++) {
-        if (array[i].length > maxLength) {
-            maxLength = array[i].length;
-        }
-    }
-    console.log(maxLength);
-
-    // NOTE
-    // 'j' should not traverse maxLength, but minLength. Fix this.
-
-    // checking prefix between 2 words at a time
-    let temp;
-    for (let i = 0; i < (array.length - 1); i++) {
-        prefix = "";
-        for (let j = 0; j < maxLength; j++) {
-            if (array[i][j] === array[i+1][j]) {
-                prefix = prefix + array[i][j];
-                console.log(prefix);
-            } else break;
-        }
-        temp = prefix;
-        console.log(`Prefix after break is ${temp}`);
+        if (prefix === "") {
+            prefix = checkCommonCharacters(array[0], array[1]);
+            if (prefix === "") {
+                break;
+            }
+        } else prefix = checkCommonCharacters(prefix, array[i]);
     }
     
-    console.log(prefix);
+    if (prefix === "") {
+        console.log("No common prefixes.");
+    } else console.log(prefix);
 }
 
-longestCommonPrefix(["flower", "florida", "flax"]);     // output = "fl"
+// checking common characters between 2 words at a time
+function checkCommonCharacters(word1, word2) {
+    // get word length of shortest word
+    let minimumLength;
+
+    if (word1.length < word2.length) {
+        minimumLength = word1.length;
+        console.log(`Shorter word is ${word1}.`);
+    } else if (word1.length > word2.length) {
+        minimumLength = word2.length;
+        console.log(`Shorter word is ${word2}.`);
+    } else {
+        minimumLength - word1.length;
+        console.log("Both words are similar in length.");
+    }
+
+    // check common characters between 2 words and set to prefix
+    let prefix = "";
+
+    for (let i = 0; i < minimumLength; i++) {
+        if (word1[i] === word2[i]) {
+            prefix = prefix + word1[i];
+        } else break;
+    }
+
+    return prefix;
+}
+
+longestCommonPrefix(["sasanka", "flower", "florida", "flax", "four"]);     // output = "fl"
+
+// NOTE
+// checkCommonCharacters() gives undefined output when both arguments are the same word. Find out why this happens.
