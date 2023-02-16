@@ -1,3 +1,5 @@
+// This file contains the same code as index.ts, but with explanatory comments and console logs.
+
 function romanToInteger(romanNumber: string): number {
     // initialize 'integer' variable
     let integer: number = 0;
