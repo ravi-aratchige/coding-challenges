@@ -38,4 +38,5 @@ function romanToInteger(romanNumber: string): number {
     return integer;
 }
 
+console.log(romanToInteger("LVIII"));       // output = 58
 console.log(romanToInteger("MCMXCIV"));     // output = 1994
