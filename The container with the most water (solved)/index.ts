@@ -1,4 +1,5 @@
 function containerWithMostWater(height: number[]): number {
+    // initializing variables for height of water body and amount of water
     let minHeight: number = 0, amountOfWater: number = 0;
     for (let column1: number = 0; column1 < height.length; column1++) {
         for (let column2: number = 1; column2 < height.length; column2++) {
