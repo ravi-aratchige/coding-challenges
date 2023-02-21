@@ -35,15 +35,17 @@ function stringToInteger(str: string): number {
                 intPosition = 9;
                 break;
             default:
-                intPosition = 0;
+                intPosition = 0; 
                 break;
         }
         if (intPosition != 0) {
             integer = integer + (intPosition * j);
             console.log(integer);
-        }
+        } // else j = j * 10;
     }
     return integer;
 }
 
 console.log(stringToInteger("1234"));
+console.log(stringToInteger("9037"));
+console.log(stringToInteger("10000"));
