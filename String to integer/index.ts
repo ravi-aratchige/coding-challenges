@@ -3,9 +3,13 @@
 // without using any prebuilt methods.
 
 function stringToInteger(str: string): number {
+    // initializing variables
     let integer: number = 0;
     let digit: number;
-    for (let i: number = (str.length - 1), j: number = 1; i >= 0; i--, (j=j*10)) {
+
+    for (let i: number = (str.length - 1), j: number = 1; i >= 0; i--, (j *= 10)) {
+        // switch statement to map each character of 'str'
+        // to its corresponding numerical digit / value
         switch(str[i]) {
             case "1":
                 digit = 1;
@@ -35,20 +39,20 @@ function stringToInteger(str: string): number {
                 digit = 9;
                 break;
             default:
-                digit = 0; 
+                digit = 0;
                 break;
         }
 
         // if digit is not a zero
         if (digit != 0) {
-            integer = integer + (digit * j);
+            integer += (digit * j);
             // console.log(integer);
         }
     }
 
     // checking for negative numbers
     if (str[0] === "-") {
-        integer = integer * (-1);
+        integer *= (-1);
     }
 
     return integer;
