@@ -1,7 +1,3 @@
-// Implement a method stringToInteger() to convert
-// a number provided as a string into an integer
-// without using any prebuilt methods.
-
 function stringToInteger(str: string): number {
     // initializing variables
     let integer: number = 0;
@@ -46,7 +42,6 @@ function stringToInteger(str: string): number {
         // if digit is not a zero
         if (digit != 0) {
             integer += (digit * j);
-            // console.log(integer);
         }
     }
 
