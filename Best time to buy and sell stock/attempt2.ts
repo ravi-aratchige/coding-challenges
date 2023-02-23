@@ -40,6 +40,8 @@ function getMax(array: number[]): number {
     let tempArray: number[] = array;
     // enter code here
     for (let i: number = 0; i < array.length; i++) {
+        console.log(`array[${i}] is ${array[i]}`);
+        console.log(`array[${i+1}] is ${array[i+1]}`);
         if (array[i] > array[i+1]) {
             maximum = array[i];
         } // else maximum = array[i+1];
@@ -53,10 +55,12 @@ function getMax(array: number[]): number {
     return maximum;
 }
 
-console.log(buyAndSellStock([7,1,5,3,6,4]));
+// console.log(buyAndSellStock([7,1,5,3,6,4]));
 // console.log(buyAndSellStock([7,6,4,3,1]));
 
 // ERROR:
-console.log(buyAndSellStock([1,2]));
+// console.log(buyAndSellStock([1,2]));
 // expected output = 1
 // output given = 0
+
+console.log(getMax([2]));
