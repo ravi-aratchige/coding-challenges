@@ -19,9 +19,44 @@
 function buyAndSellStock(prices: number[]): number {
     // initializing variables
     let profit: number = 0;
+    let buyingPrice: number, sellingPrice: number, tempArray: number[], maximumValue: number = 0;
     // enter code here
+    for (let i: number = 0; i < prices.length; i++) {
+        buyingPrice = prices[0];
+        console.log(`Buying price is ${buyingPrice}`);
+        prices.shift();
+        console.log(`Array after shifting is ${prices}`);
+        maximumValue = getMax(prices);
+        if ((maximumValue - buyingPrice) > profit) {
+            profit = maximumValue - buyingPrice;
+            console.log(`A profit of ${profit} has been made`);
+        }
+    }
     return profit;
 }
 
+function getMax(array: number[]): number {
+    let maximum: number = 0;
+    let tempArray: number[] = array;
+    // enter code here
+    for (let i: number = 0; i < array.length; i++) {
+        if (array[i] > array[i+1]) {
+            maximum = array[i];
+        } // else maximum = array[i+1];
+    }
+
+    // tempArray.sort();
+    // maximum = tempArray[(tempArray.length - 1)];
+
+
+    console.log(`Maximum is ${maximum}`);
+    return maximum;
+}
+
 console.log(buyAndSellStock([7,1,5,3,6,4]));
-console.log(buyAndSellStock([7,6,4,3,1]));
+// console.log(buyAndSellStock([7,6,4,3,1]));
+
+// ERROR:
+console.log(buyAndSellStock([1,2]));
+// expected output = 1
+// output given = 0
